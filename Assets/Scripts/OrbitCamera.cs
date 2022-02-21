@@ -130,7 +130,9 @@ public class OrbitCamera : MonoBehaviour
 
 	bool ManualRotation()
 	{
-		Vector2 input = new Vector2(Input.GetAxis("Vertical Camera"),Input.GetAxis("Horizontal Camera")
+		Vector2 input = new Vector2(
+			Input.GetAxis("Vertical Camera"),
+			Input.GetAxis("Horizontal Camera")
 		);
 		const float e = 0.001f;
 		if (input.x < -e || input.x > e || input.y < -e || input.y > e)
