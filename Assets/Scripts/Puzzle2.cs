@@ -4,60 +4,118 @@ using UnityEngine;
 
 public class Puzzle2 : MonoBehaviour
 {
-    private float Timer = 0f;
-    private float DoorTimer = 0f;
-    public float DoorTimer2 = 15f;
-    public float MaxTimer = 15f;
-    
+    /*public GameObject Trigger1;
+    public GameObject Trigger2;
+    public GameObject Trigger3;
     public GameObject Door;
-    float t;
-    Vector3 startPosition;
-    Vector3 target;
-    float DoorClosetime = 3;
+    public float T1Timer;
+    public float T2Timer;
+    public float T3Timer;
+    [HideInInspector] public float T1Countdown;
+    [HideInInspector] public float T2Countdown;
+    [HideInInspector] public float T3Countdown;
+    public float speed;
+    public float DoorSolveHeight;
+    private float DoorOrigin;
+    private bool DoorOpen = false;
+    private static bool Tcol1;
+    private static bool Tcol2;
+    private static bool Tcol3;
 
-    private void OnCollisionEnter(Collision collision)
+    private void Start()
     {
-        Timer = MaxTimer;
-        DoorTimer = DoorTimer2;
-        startPosition = target = transform.position;
-
+        DoorOrigin = Door.transform.position.y;
     }
-
-    private void OnCollisionExit(Collision collision) 
+    
+    public void Update()
     {
-        /* Set timer 2 to count down, once the timer is done. make the door 
-          shut by timer 1 count down*/
-       while (DoorTimer > 1) 
+        // Registers GameObjects rotation to a value
+        float T = Door.transform.position.y;
+
+        //Checks collision to see if door will open(This accesses an outside script)
+
+        Tcol1 = Trigger1Col.Collided;
+        Tcol2 = Trigger1Col.Collided;
+        Tcol3 = Trigger1Col.Collided;
+        Counting();
+
+        // Sets countdown timer to equal timer value
+
+        if (Tcol1)
+        { 
+            T1Countdown = T1Timer; 
+        }
+        if (Tcol2)
         {
-            DoorTimer -= Time.deltaTime;
-            t += Time.deltaTime / DoorClosetime;
-            transform.position = Vector3.Lerp(startPosition, target, t);
+            T2Countdown = T2Timer;
+        }
+        if (Tcol1)
+        {
+            T3Countdown = T3Timer;
         }
 
-        if (DoorTimer == 0)
+        //Checks to see if game object rotation is between 2 values
+        if (T1Countdown <= 0 && T1Countdown <= 0 && T1Countdown <= 0)
         {
-            while (Timer >1 )
+            DoorOpen = true;
+
+        }
+        else
+        {
+            DoorOpen = false;
+        }
+
+        if (T1Countdown >= 1 && T2Countdown >= 1 && T3Countdown >= 1)
+        {
+            Debug.Log("Solved!");
+            if (T <= DoorSolveHeight)
             {
-                Timer += Time.deltaTime;
+                Door.transform.position += new Vector3(0, speed * Time.deltaTime, 0);
             }
 
         }
-    }
-    public void SetDestination(Vector3 destination, float time)
-    {
-        t = 0;
-        startPosition = transform.position;
-        DoorClosetime = time;
-        target = destination;
-    }
-
-    void Update()
-    {
-        if (Timer <1  && DoorTimer < 1)
+        else
         {
-            Timer = MaxTimer;
-            DoorTimer = DoorTimer2;
+            if (T > DoorOrigin)
+            {
+                Door.transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
+            }
+
         }
-    }
-   
+
+        void Counting()
+        {
+            if (T1Countdown >=1)
+            {
+                T1Countdown -= T1Countdown * Time.deltaTime;
+            }
+            if (T2Countdown >= 1)
+            {
+                T2Countdown -= T2Countdown *Time.deltaTime;
+
+            }
+            if (T3Countdown >= 1)
+            {
+                T2Countdown -= T2Countdown * Time.deltaTime;
+            }
+
+
+        }
+        *//* IEnumerator MovingDoor()
+         {
+             for (int i = 0; i < Timer; i++)
+             {
+                 //if (Door.transform.position )
+                 Door.transform.position += new Vector3(0, speed * Time.deltaTime, 0);
+             }
+             yield return new WaitForSeconds(5);
+
+             for (int i = 0; i < CloseTimer; i++)
+             {
+                 Door.transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
+             }
+             yield return new WaitForSeconds(5);
+
+         }*//*
+    }*/
 }

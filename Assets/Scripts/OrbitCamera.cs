@@ -28,6 +28,9 @@ public class OrbitCamera : MonoBehaviour
 	[SerializeField, Range(0f, 90f)]
 	float alignSmoothRange = 45f;
 
+	[SerializeField, Min(0f)]
+	float upAlignmentSpeed = 360f;
+
 	[SerializeField]
 	LayerMask obstructionMask = -1;
 
@@ -38,6 +41,10 @@ public class OrbitCamera : MonoBehaviour
 	Vector2 orbitAngles = new Vector2(45f, 0f);
 
 	float lastManualRotationTime;
+
+	Quaternion gravityAlignment = Quaternion.identity;
+
+	Quaternion orbitRotation;
 
 	Vector3 CameraHalfExtends
 	{
@@ -65,22 +72,19 @@ public class OrbitCamera : MonoBehaviour
 	{
 		regularCamera = GetComponent<Camera>();
 		focusPoint = focus.position;
-		transform.localRotation = Quaternion.Euler(orbitAngles);
+		transform.localRotation = orbitRotation = Quaternion.Euler(orbitAngles);
 	}
 
 	void LateUpdate()
 	{
+		UpdateGravityAlignment();
 		UpdateFocusPoint();
-		Quaternion lookRotation;
 		if (ManualRotation() || AutomaticRotation())
 		{
 			ConstrainAngles();
-			lookRotation = Quaternion.Euler(orbitAngles);
+			orbitRotation = Quaternion.Euler(orbitAngles);
 		}
-		else
-		{
-			lookRotation = transform.localRotation;
-		}
+		Quaternion lookRotation = gravityAlignment * orbitRotation;
 
 		Vector3 lookDirection = lookRotation * Vector3.forward;
 		Vector3 lookPosition = focusPoint - lookDirection * distance;
@@ -94,7 +98,8 @@ public class OrbitCamera : MonoBehaviour
 
 		if (Physics.BoxCast(
 			castFrom, CameraHalfExtends, castDirection, out RaycastHit hit,
-			lookRotation, castDistance, obstructionMask
+			lookRotation, castDistance, obstructionMask,
+			QueryTriggerInteraction.Ignore
 		))
 		{
 			rectPosition = castFrom + castDirection * hit.distance;
@@ -102,6 +107,28 @@ public class OrbitCamera : MonoBehaviour
 		}
 
 		transform.SetPositionAndRotation(lookPosition, lookRotation);
+	}
+
+	void UpdateGravityAlignment()
+	{
+		Vector3 fromUp = gravityAlignment * Vector3.up;
+		Vector3 toUp = CustomGravity.GetUpAxis(focusPoint);
+		float dot = Mathf.Clamp(Vector3.Dot(fromUp, toUp), -1f, 1f);
+		float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
+		float maxAngle = upAlignmentSpeed * Time.deltaTime;
+
+		Quaternion newAlignment =
+			Quaternion.FromToRotation(fromUp, toUp) * gravityAlignment;
+		if (angle <= maxAngle)
+		{
+			gravityAlignment = newAlignment;
+		}
+		else
+		{
+			gravityAlignment = Quaternion.SlerpUnclamped(
+				gravityAlignment, newAlignment, maxAngle / angle
+			);
+		}
 	}
 
 	void UpdateFocusPoint()
@@ -134,6 +161,7 @@ public class OrbitCamera : MonoBehaviour
 			Input.GetAxis("Vertical Camera"),
 			Input.GetAxis("Horizontal Camera")
 		);
+
 		const float e = 0.001f;
 		if (input.x < -e || input.x > e || input.y < -e || input.y > e)
 		{
@@ -143,6 +171,7 @@ public class OrbitCamera : MonoBehaviour
 		}
 		return false;
 	}
+	
 
 	bool AutomaticRotation()
 	{
@@ -151,10 +180,10 @@ public class OrbitCamera : MonoBehaviour
 			return false;
 		}
 
-		Vector2 movement = new Vector2(
-			focusPoint.x - previousFocusPoint.x,
-			focusPoint.z - previousFocusPoint.z
-		);
+		Vector3 alignedDelta =
+			Quaternion.Inverse(gravityAlignment) *
+			(focusPoint - previousFocusPoint);
+		Vector2 movement = new Vector2(alignedDelta.x, alignedDelta.z);
 		float movementDeltaSqr = movement.sqrMagnitude;
 		if (movementDeltaSqr < 0.0001f)
 		{
