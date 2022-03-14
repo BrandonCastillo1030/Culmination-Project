@@ -54,7 +54,7 @@ public class Puzzle1Solved : MonoBehaviour
             Debug.Log("Solved!");
             if (T <= DoorSolveHeight)
             {
-                Door.transform.position += new Vector3(0, speed * Time.deltaTime, 0);
+                Door.transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
             }
 
         }
@@ -62,7 +62,7 @@ public class Puzzle1Solved : MonoBehaviour
         {
             if(T > DoorOrigin)
             {
-                Door.transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
+                Door.transform.position += new Vector3(0, speed * Time.deltaTime, 0);
             }
            
         }
