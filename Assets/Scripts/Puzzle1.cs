@@ -1,3 +1,11 @@
+//  Made by Jonathan Clement
+//  Sript: puzzle 1
+
+/*      This Script was made to Rotate a pillar to a specified degree to meet a set requirement.
+    After the requirement is met, the Door will open, leading to the next location that was
+    Previously unaccessible to the player.     */
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,6 +38,8 @@ public class Puzzle1 : MonoBehaviour
 
     void Update()
     {
+        // Records pillars current rotation and checks for collission
+
         float T = Pillar1.transform.eulerAngles.y;
 
             if (collided)

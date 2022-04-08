@@ -1,3 +1,11 @@
+//  Made by Jonathan Clement
+//  Sript: puzzle 1
+
+/*      This Script was made to control set flags(Requirements) in the game. This also records The artifacts collected and controls
+ *      the final activated door*/
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,14 +34,17 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //This code records the original position of the door
         T = Door.transform.position.y;
 
+        //This code checks if all 3 relics have been collected then sets a flag to be true(Active)
         if (Relic == 3)
         {
             Flag1 = true;
 
             Debug.Log("You have all three relics!!!");
         }
+        //This code checks to see if all 3 relics have been placed in their proper locations
         if (Placed == 3)
             Flag2 = true;
         {
@@ -62,4 +73,5 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    
 }
