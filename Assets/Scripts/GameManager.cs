@@ -13,13 +13,16 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject Door;
+    public GameObject KeyObj;
+    
 
-    public bool Flag1 = false;
-    public bool Flag2 = false;
-    public bool Flag3 = false;
+    public static bool Flag1 = false;
+    public static bool Flag2 = false;
+    public static bool Flag3 = false;
     public static int Relic = 0;
     public static int Placed = 0;
 
+    public static bool key = false;
     public float DoorSolveHeight;
     private float DoorOrigin;
     public float speed;
@@ -72,6 +75,16 @@ public class GameManager : MonoBehaviour
 
             }
         }
+        if (Flag3 == true)
+        {
+            KeyObj.SetActive(true);
+        }
+        else
+        {
+            KeyObj.SetActive(false);
+        }
+
+        
     }
-    
+
 }

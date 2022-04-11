@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class InteractPopUp : MonoBehaviour
+public class RelicPlaced : MonoBehaviour
 {
     public GameObject InteractArea;
     // Start is called before the first frame update
