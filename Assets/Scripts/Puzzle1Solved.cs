@@ -25,12 +25,14 @@ public class Puzzle1Solved : MonoBehaviour
     }
     void Update()
     {
+
         // Registers GameObjects rotation to a value
         float T = Door.transform.position.y;
-        float P1 = Pillar1.transform.eulerAngles.y;
-        float P2 = Pillar2.transform.eulerAngles.y;
-        float P3 = Pillar3.transform.eulerAngles.y;
-        float P4 = Pillar4.transform.eulerAngles.y;
+        float P1 = Pillar1.transform.localEulerAngles.y;
+        float P2 = Pillar2.transform.localEulerAngles.y;
+        float P3 = Pillar3.transform.localEulerAngles.y;
+        float P4 = Pillar4.transform.localEulerAngles.y;
+        Debug.Log("P1: "+ P1 + " P2: " + P2 + " P3: " + P3 + " P4: " + P4 );
 
         //Checks to see if game object rotation is between 2 values
         if (P1 >= SolveMin && P1<= SolveMax && P2 >= SolveMin && P2 <= SolveMax && 

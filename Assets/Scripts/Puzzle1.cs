@@ -42,11 +42,14 @@ public class Puzzle1 : MonoBehaviour
 
         float T = Pillar1.transform.eulerAngles.y;
 
+        Debug.Log("World Space rotation: " + T);
+        Debug.Log("Local Rotation: " + Pillar1.transform.localEulerAngles.y);
+
             if (collided)
             {
                 Pillar1.transform.Rotate(Vector3.up * (rotationSpeed * Time.deltaTime));
 
-                Debug.Log(T);
+                //Debug.Log(T);
                 isturned = true;
             }
         
