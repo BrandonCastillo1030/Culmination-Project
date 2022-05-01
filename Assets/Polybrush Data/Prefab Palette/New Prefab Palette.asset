@@ -64,8 +64,8 @@ MonoBehaviour:
   - gameObject: {fileID: 3333992426022506991, guid: bf2daeb3feca01042895df9055aff1e6, type: 3}
     settings:
       m_Strength: 100
-      m_RotationRangeMin: {x: 0, y: 0, z: 0}
-      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_RotationRangeMin: {x: 0, y: 17.87234, z: 20.425531}
+      m_RotationRangeMax: {x: 321.70212, y: 324.2553, z: 298.7234}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
       m_ScaleRangeMax: {x: 1, y: 1, z: 1}
       m_UniformScale: {x: 1, y: 1}
@@ -79,15 +79,15 @@ MonoBehaviour:
     name: Plant 2
   - gameObject: {fileID: 5403082927020384011, guid: e1cbc413fd9a4254382e779e3d4b8639, type: 3}
     settings:
-      m_Strength: 100
+      m_Strength: 97.55323
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
-      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 339.57446, y: 296.1702, z: 291.0638}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
       m_ScaleRangeMax: {x: 1, y: 1, z: 1}
       m_UniformScale: {x: 1, y: 1}
       m_UniformBool: 0
       m_XRotationBool: 0
-      m_YRotationBool: 0
+      m_YRotationBool: 1
       m_ZRotationBool: 0
       m_XScaleBool: 0
       m_YScaleBool: 0
@@ -95,15 +95,15 @@ MonoBehaviour:
     name: Plant 3
   - gameObject: {fileID: 1066389286768823913, guid: 8138544ce422da8438622a4543ebb9f6, type: 3}
     settings:
-      m_Strength: 100
-      m_RotationRangeMin: {x: 0, y: 0, z: 0}
-      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_Strength: 99.43536
+      m_RotationRangeMin: {x: 38.297874, y: 25.531914, z: 33.191486}
+      m_RotationRangeMax: {x: 326.8085, y: 334.46808, z: 316.59573}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
       m_ScaleRangeMax: {x: 1, y: 1, z: 1}
       m_UniformScale: {x: 1, y: 1}
       m_UniformBool: 0
       m_XRotationBool: 0
-      m_YRotationBool: 0
+      m_YRotationBool: 1
       m_ZRotationBool: 0
       m_XScaleBool: 0
       m_YScaleBool: 0
