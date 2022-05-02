@@ -9,20 +9,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject Door;
     public GameObject KeyObj;
+    public Image Key;
     
 
     public static bool Flag1 = false;
     public static bool Flag2 = false;
     public static bool Flag3 = false;
+    public static bool Flag4 = false;
+    public static bool Flag5 = false;
     public static int Relic = 0;
     public static int Placed = 0;
 
-    public static bool key = false;
     public float DoorSolveHeight;
     private float DoorOrigin;
     public float speed;
@@ -31,7 +34,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Key.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -78,6 +81,7 @@ public class GameManager : MonoBehaviour
         if (Flag3 == true)
         {
             KeyObj.SetActive(true);
+            Key.gameObject.SetActive(true);
         }
         else
         {

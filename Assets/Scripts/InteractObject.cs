@@ -19,7 +19,7 @@ public class InteractObject : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && check1 == true)
         {
-            GameManager.Flag3 = true;
+            GameManager.Flag5 = true;
             Debug.Log("button was pressed");
 
         }
@@ -30,9 +30,9 @@ public class InteractObject : MonoBehaviour
         if (collision.collider.tag == "Interactable")
         {
             text.gameObject.SetActive(true);
-            if (GameManager.key == true)
+            if (GameManager.Flag3 == true && GameManager.Flag4 == true)
             {
-                text.text = "Press X to place the key on pedistal!";
+                text.text = "Press X to put the key on pedistal!";
                 check1 = true;
                
             }

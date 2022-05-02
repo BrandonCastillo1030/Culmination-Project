@@ -51,8 +51,9 @@ public class Puzzle1Solved : MonoBehaviour
             Solved4 = false;
         }
 
-         if(Solved1 == true && Solved2 == true && Solved3 == true && Solved4 == true)
+         if (Solved1 == true && Solved2 == true && Solved3 == true && Solved4 == true)
         {
+            GameManager.Flag3 = true;
             Debug.Log("Solved!");
             if (T <= DoorSolveHeight)
             {

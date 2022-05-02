@@ -16,8 +16,8 @@ public class FishMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(startPoint, endPoint, Time.deltaTime * 10);
-        transform.LookAt(endPoint);
+        //transform.position = Vector3.MoveTowards(startPoint, endPoint, Time.deltaTime * 10);
+        //transform.LookAt(endPoint);
     }
     
 

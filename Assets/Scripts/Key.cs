@@ -18,7 +18,7 @@ public class Key : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameManager.key = true;
+        GameManager.Flag4 = true;
         Destroy(gameObject);
     }
 }
