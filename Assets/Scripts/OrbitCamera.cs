@@ -148,6 +148,7 @@ public class OrbitCamera : MonoBehaviour
 				t = Mathf.Min(t, focusRadius / distance);
 			}
 			focusPoint = Vector3.Lerp(targetPoint, focusPoint, t);
+			Debug.Log("Code is Running!");
 		}
 		else
 		{
