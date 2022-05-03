@@ -25,10 +25,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _FresnelExponent: 5
-    - _GlowIntensity: 0.02
+    - _GlowIntensity: 0.009
     - _MaxDistance: 500
-    - _Panner_A: 2.5
-    - _Panner_B: 0.5
+    - _Panner_A: 0.5
+    - _Panner_B: 0
     - _Scale_A: 150
     - _Scale_B: 200
     m_Colors: []
