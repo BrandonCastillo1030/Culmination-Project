@@ -25,9 +25,9 @@ public class InteractObject : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
-        if (collision.collider.tag == "Interactable")
+        if (collision.collider.tag == "Player")
         {
             text.gameObject.SetActive(true);
             if (GameManager.Flag3 == true && GameManager.Flag4 == true)
