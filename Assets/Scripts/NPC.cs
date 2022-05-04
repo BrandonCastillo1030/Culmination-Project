@@ -1,0 +1,15 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+[CreateAssetMenu(fileName = "NPC File", menuName = "NPC Files Archive")]
+public class NPC : ScriptableObject
+{
+    public string name;
+    [TextArea(3, 15)]
+    public string[] dialogue;
+    [TextArea(3, 15)]
+    public string[] playerDialogue;
+
+}

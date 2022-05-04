@@ -32,7 +32,7 @@ public class InteractObject : MonoBehaviour
             text.gameObject.SetActive(true);
             if (GameManager.Flag3 == true && GameManager.Flag4 == true)
             {
-                text.text = "Press X to put the key on pedistal!";
+                text.text = "Press X to put the key on pedestal!";
                 check1 = true;
                
             }
