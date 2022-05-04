@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Duma
   dialogue:
-  - "Duma- \u201CI\u2019m\u2026 free\u2026\u201D \r"
+  - "\u201CI\u2019m\u2026 free\u2026\u201D \r"
+  - "\u201CWoahhh\u2026 The capsules weren\u2019t wrong\u2026 This is beautiful\u2026\u201D"
   playerDialogue: []

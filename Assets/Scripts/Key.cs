@@ -4,21 +4,14 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioSource playSound;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameManager.Flag4 = true;
-        Destroy(gameObject);
+       GameManager.Flag4 = true;
+       Destroy(gameObject);
+        playSound.Play();
+
     }
 }

@@ -36,6 +36,17 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("Button was pressed");
             {
+                //trigger dialogue
+                if (Input.GetButtonDown("Interact") && isTalking == false)
+                {
+                    StartConversation();
+                    Debug.Log("Button Pressed");
+                }
+                else if (Input.GetButtonDown("Interact") && isTalking == true)
+                {
+                    EndDialogue();
+                    Debug.Log("Button Pressed");
+                }
                 distance = Vector3.Distance(player.transform.position, this.transform.position);
                 if (distance <= 2.5f)
                 {
@@ -55,17 +66,7 @@ public class DialogueManager : MonoBehaviour
                             curResponseTracker = 0;
                         }
                     }
-                    //trigger dialogue
-                    if (Input.GetButtonDown("Interact") && isTalking == false)
-                    {
-                        StartConversation();
-                        Debug.Log("Button Pressed");
-                    }
-                    else if (Input.GetButtonDown("Interact") && isTalking == true)
-                    {
-                        EndDialogue();
-                        Debug.Log("Button Pressed");
-                    }
+                 
 
                     if (curResponseTracker == 0 && npc.playerDialogue.Length >= 0)
                     {
