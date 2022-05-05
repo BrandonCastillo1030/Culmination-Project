@@ -3,6 +3,8 @@ using UnityEngine;
 public class MovingSphere : MonoBehaviour
 {
 
+	public static bool isMoving = false;
+
 	[SerializeField]
 	Transform playerInputSpace = default;
 
@@ -116,6 +118,18 @@ public class MovingSphere : MonoBehaviour
 		playerInput.y = Input.GetAxis("Vertical");
 		playerInput.z = Swimming ? Input.GetAxis("UpDown") : 0f;
 		playerInput = Vector3.ClampMagnitude(playerInput, 1f);
+
+		if(playerInput.x > 0 || playerInput.y > 0)
+        {
+
+			isMoving = true;
+
+		}
+
+        else
+        {
+			isMoving = false;
+        }
 
 		if (playerInputSpace)
 		{
