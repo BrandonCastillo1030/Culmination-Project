@@ -7,6 +7,7 @@ public class InteractObject : MonoBehaviour
 {
     public Text text;
     private bool check1 = false;
+   // public AudioSource playSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,9 @@ public class InteractObject : MonoBehaviour
         if (Input.GetButtonDown("Interact") && check1 == true)
         {
             GameManager.Flag5 = true;
+            //playSound.Play();
             Debug.Log("button was pressed");
+
 
         }
     }

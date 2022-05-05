@@ -8,6 +8,8 @@ public class DoorGoDown : MonoBehaviour
     public float DoorSolveHeight;
     private float DoorOrigin;
     public float speed;
+   // public AudioSource playSound;
+
 
 
     // Start is called before the first frame update
@@ -23,10 +25,12 @@ public class DoorGoDown : MonoBehaviour
 
         if (GameManager.Flag5 == true)
         {
-           
+            //playSound.Play();
             if (T <= DoorSolveHeight)
             {
+                
                 Door.transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
+
             }
 
         }
@@ -40,6 +44,7 @@ public class DoorGoDown : MonoBehaviour
         }
 
     }
+
 
 
 }

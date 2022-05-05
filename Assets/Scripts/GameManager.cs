@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject Door;
     public GameObject KeyObj;
     public Image Key;
-    
+    //public AudioSource playSound;
 
     public static bool Flag1 = false;
     public static bool Flag2 = true;
@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
                 if (T <= DoorSolveHeight)
                 {
                     Door.transform.position += new Vector3(0, speed * Time.deltaTime, 0);
+                    
                 }
 
             }
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour
                 if (T > DoorOrigin)
                 {
                     Door.transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
+
                 }
 
             }
