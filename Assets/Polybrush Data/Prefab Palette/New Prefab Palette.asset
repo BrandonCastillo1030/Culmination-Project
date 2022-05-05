@@ -338,8 +338,8 @@ MonoBehaviour:
       m_Strength: 50
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
-      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
-      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMin: {x: 5, y: 5, z: 5}
+      m_ScaleRangeMax: {x: 5, y: 5, z: 5}
       m_UniformScale: {x: 1, y: 1}
       m_UniformBool: 0
       m_XRotationBool: 0
@@ -354,8 +354,8 @@ MonoBehaviour:
       m_Strength: 50
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
-      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
-      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMin: {x: 5, y: 5, z: 5}
+      m_ScaleRangeMax: {x: 5, y: 5, z: 5}
       m_UniformScale: {x: 1, y: 1}
       m_UniformBool: 0
       m_XRotationBool: 0
@@ -365,3 +365,83 @@ MonoBehaviour:
       m_YScaleBool: 1
       m_ZScaleBool: 1
     name: Coral11
+  - gameObject: {fileID: 6417604559034303762, guid: 05c7c51d42a1c324da7db43958c14eea, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 5, y: 5, z: 5}
+      m_ScaleRangeMax: {x: 5, y: 5, z: 5}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 0
+      m_YRotationBool: 1
+      m_ZRotationBool: 0
+      m_XScaleBool: 1
+      m_YScaleBool: 1
+      m_ZScaleBool: 1
+    name: Coral with bubbles
+  - gameObject: {fileID: 8701858198907812711, guid: 4f4b4edac4a74b44fa15709a24e0e27e, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 3, y: 3, z: 3}
+      m_ScaleRangeMax: {x: 3, y: 3, z: 3}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 0
+      m_YRotationBool: 1
+      m_ZRotationBool: 0
+      m_XScaleBool: 1
+      m_YScaleBool: 1
+      m_ZScaleBool: 1
+    name: Grass01
+  - gameObject: {fileID: 1270232797588202, guid: 25e9bb421ec4db043a1f0661abbb24d1, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 2, y: 2, z: 2}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 0
+      m_YRotationBool: 1
+      m_ZRotationBool: 0
+      m_XScaleBool: 1
+      m_YScaleBool: 1
+      m_ZScaleBool: 1
+    name: Rock 1
+  - gameObject: {fileID: 1270232797588202, guid: 25e9bb421ec4db043a1f0661abbb24d1, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 6.460993, y: 5.609929, z: 6.319149}
+      m_ScaleRangeMax: {x: 7.695035, y: 7.4113464, z: 7.836878}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 0
+      m_YRotationBool: 1
+      m_ZRotationBool: 0
+      m_XScaleBool: 1
+      m_YScaleBool: 1
+      m_ZScaleBool: 1
+    name: Rock 1
+  - gameObject: {fileID: 1662332421245089492, guid: 77a4661baedc5a848bd10cf9becb3c3b, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 3, y: 3, z: 3}
+      m_ScaleRangeMax: {x: 3, y: 3, z: 3}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 0
+      m_YRotationBool: 1
+      m_ZRotationBool: 0
+      m_XScaleBool: 1
+      m_YScaleBool: 1
+      m_ZScaleBool: 1
+    name: GrassGlow
