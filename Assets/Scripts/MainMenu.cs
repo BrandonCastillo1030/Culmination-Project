@@ -42,4 +42,13 @@ public class MainMenu : MonoBehaviour
 
         SceneManager.LoadScene(LevelIndex);
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (GameManager.Flag5==true)
+        {
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        }
+    }
 }
+
